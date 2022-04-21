@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,56 @@
   <title>Financial Manager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b0463c4614.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  
+
+  <header>
+    <h1><i class="fa-solid fa-piggy-bank"></i>Wallet</h1>
+    <p>My personal financial manager</p>
+  </header>
+
+  <main>
+    <section class="transactions">
+
+      <h2 class="title">Transaction list</h2>
+      <div class="transaction-list">
+
+        <div class="income-area">
+          <h3>Income:</h3>
+          <div class="transaction" id="0">
+            <p class="transaction-name"><i class="fa-solid fa-money-bill-1"></i>Wypłata</p>
+            <p class="transaction-amount">2500zł <button class="delete"><i class="fa-solid fa-x"></i></button></p>
+          </div>
+        </div>
+
+        <div class="expenses-area">
+          <h3>Expenses:</h3>
+          <div class="transaction" id="1">
+            <p class="transaction-name"><i class="fa-solid fa-bag-shopping"></i>Shopping</p>
+            <p class="transaction-amount">-250zł <button class="delete"><i class="fa-solid fa-x"></i></button></p>
+          </div>
+          <div class="transaction" id="2">
+            <p class="transaction-name"><i class="fa-solid fa-car"></i>Car</p>
+            <p class="transaction-amount">-500zł <button class="delete"><i class="fa-solid fa-x"></i></button></p>
+          </div>
+          <div class="transaction" id="3">
+            <p class="transaction-name"><i class="fa-solid fa-heart-pulse"></i>Health&Beauty</p>
+            <p class="transaction-amount">-200zł <button class="delete"><i class="fa-solid fa-x"></i></button></p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
   <script src="script.js"></script>
 </body>
+
 </html>
