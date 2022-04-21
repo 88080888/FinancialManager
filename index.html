@@ -28,7 +28,7 @@
         <div class="income-area">
           <h3>Income:</h3>
           <div class="transaction" id="0">
-            <p class="transaction-name"><i class="fa-solid fa-money-bill-1"></i>Wypłata</p>
+            <p class="transaction-name"><i class="fa-solid fa-money-bill-1"></i>Income</p>
             <p class="transaction-amount">2500zł <button class="delete"><i class="fa-solid fa-x"></i></button></p>
           </div>
         </div>
@@ -57,8 +57,8 @@
         <p class="avaliable-money">0zł</p>
       </div>
       <div class="controls">
-        <button class="add-transaction"><i class="fa-solid fa-plus"></i>Add transaction</button>
-        <button class="delete-all"><i class="fa-solid fa-trash-can"></i>Delete all</button>
+        <button class="add-transaction"><i class="fa-solid fa-plus"></i> Add transaction</button>
+        <button class="delete-all"><i class="fa-solid fa-trash-can"></i> Delete all</button>
       </div>
       <div class="style-selection">
         <h2 class="title">Choose style</h2>
@@ -67,12 +67,38 @@
           <button class="dark"></button>
         </div>
       </div>
-
     </section>
-
   </main>
+
+  <div class="add-transaction-panel">
+    
+    <h2 class="title">Add new transaction</h2>
+
+    <label for="name">Name:</label>
+    <small>(enter transaction name)</small>
+    <input type="text" id="name">
+
+    <label for="amount">Amount:</label>
+    <small>(enter transaction amount)</small>
+    <input type="number" id="amount">
+
+    <label for="category">Category:</label>
+    <small>( [+] means income, [-] means expense)</small>
+    <select id="category">
+      <option value="none" selected disabled></option>
+      <option value="income">[ + ] Income</option>
+      <option value="shopping">[ - ] Shopping</option>
+      <option value="car">[ - ] Car</option>
+      <option value="healthandbeauty">[ - ] Health&Beauty</option>
+    </select>
+
+    <div class="panel-buttons">
+      <button class="save"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+      <button class="cancel"><i class="fa-solid fa-xmark"></i> Cancel</button>
+    </div>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
-smetnik
 </html>
