@@ -6,8 +6,10 @@
 
 :root {
   --first-color: #f9f9f9;
-  --second-color: rgba(24, 26, 36, 0.705);
-  --border-color: rgb(0,0,0,.2);
+  --second-color: rgba(0, 0, 0, 0.877);
+  --third-color: rgb(51, 179, 26);
+  --fourth-color:  rgb(179, 26, 26);
+  --border-color: rgb(0, 0, 0, .2);
 }
 
 body {
@@ -77,15 +79,15 @@ h2.title {
   border: 1px solid var(--border-color);
 }
 
-.income-area h3, 
+.income-area h3,
 .income-area .transaction-amount {
-  color: rgb(32, 184, 32);
+  color: var(--third-color);
   font-weight: bold;
 }
 
-.expenses-area h3, 
+.expenses-area h3,
 .expenses-area .transaction-amount {
-  color: rgb(255, 31, 31);
+  color: var(--fourth-color);
   font-weight: bold;
 }
 
@@ -108,7 +110,7 @@ h2.title {
   color: orangered;
 }
 
-.car-title i{
+.car-title i {
   color: rgb(255, 196, 0);
 }
 
@@ -137,4 +139,78 @@ h2.title {
 .delete:hover {
   transform: scale(1.2);
   color: red;
+}
+
+
+.options {
+  padding: 80px 40px;
+  width: 500px;
+  border: 1px solid var(--border-color);
+}
+
+.avaliable-money {
+  margin-top: -10px;
+  text-align: center;
+  font-size: 60px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.controls button {
+  padding: 12px 20px;
+  background: none;
+  cursor: pointer;
+  color: var(--second-color);
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  transition: color .3s, background-color .3s;
+}
+
+.controls button:hover {
+  color: var(--first-color);
+}
+
+.controls button.add-transaction:hover {
+  background-color: var(--third-color);
+}
+
+.controls button.delete-all:hover {
+  background-color: var(--fourth-color);
+}
+
+.controls i {
+  margin-right: 10px;
+}
+
+.style-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-buttons button {
+  margin: 0 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.color-buttons button:hover {
+  transform: scale(1.2);
+}
+
+.color-buttons .light {
+  background-color: var(--first-color);
+  border: 1px solid var(--second-color)
+}
+
+.color-buttons .dark {
+  background-color: var(--second-color);
+  border: 1px solid var(--first-color)
 }
