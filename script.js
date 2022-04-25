@@ -27,6 +27,15 @@ const closeAddTransactionPanel= () => {
   addTransactionPanel.style.display = 'none';
 }
 
-addTransactionBtn.addEventListener('click',showAddTransactionPanel);
+const checkForm = () => {
+  if (nameInput.value !== '' && amountInput.value !== '' && categorySelect.value !== 'none') {
+    console.log('ok');
+  } else {
+    alert('No field can be empty!');
+  }
+}
 
+addTransactionBtn.addEventListener('click',showAddTransactionPanel);
 cancelBtn.addEventListener('click',closeAddTransactionPanel);
+saveBtn.addEventListener('click',checkForm);
+
