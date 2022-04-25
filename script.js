@@ -25,6 +25,7 @@ const showAddTransactionPanel= () => {
 
 const closeAddTransactionPanel= () => {
   addTransactionPanel.style.display = 'none';
+  clearForm();
 }
 
 const checkForm = () => {
@@ -33,6 +34,12 @@ const checkForm = () => {
   } else {
     alert('No field can be empty!');
   }
+}
+
+const clearForm = () => {
+  nameInput.value = '';
+  amountInput.value = '';
+  categorySelect.selectedIndex = 0;
 }
 
 addTransactionBtn.addEventListener('click',showAddTransactionPanel);
