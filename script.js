@@ -57,6 +57,7 @@ const createNewTransaction = () => {
 
   moneyArr.push(parseFloat(amountInput.value));
 
+  countMoney(moneyArr);
   closeAddTransactionPanel();
   ID++;
   clearForm();
@@ -84,6 +85,11 @@ const checkCategory = transaction => {
       categoryIcon = '<i class="fa-solid fa-heart-pulse"></i>';
       break;   
   }
+}
+
+const countMoney = money => {
+  const newMoney = money.reduce((x,y) => x+y);
+  avaliableMoney.textContent = `${newMoney} zł`
 }
 
 addTransactionBtn.addEventListener('click',showAddTransactionPanel);
