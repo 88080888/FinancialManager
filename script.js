@@ -51,7 +51,7 @@ const createNewTransaction = () => {
 
   newTransaction.innerHTML = `
     <p class="transaction-name shopping-title">${categoryIcon} ${nameInput.value}</p>
-    <p class="transaction-amount"> ${amountInput.value}zł <button class="delete"><i class="fa-solid fa-x"></i></button></p>
+    <p class="transaction-amount"> ${amountInput.value}zł <button class="delete" onclick="deleteTransaction(${ID})")><i class="fa-solid fa-x"></i></button></p>
   `
   amountInput.value > 0 ? incomeArea.appendChild(newTransaction) && newTransaction.classList.add('income') : expensesArea.appendChild(newTransaction) && newTransaction.classList.add('expense');
 
@@ -90,6 +90,15 @@ const checkCategory = transaction => {
 const countMoney = money => {
   const newMoney = money.reduce((x,y) => x+y);
   avaliableMoney.textContent = `${newMoney} zł`
+}
+
+const deleteTransaction = id => {
+  const transactionToDelete = document.getElementById(id);
+  const transactionAmount = parseFloat(transactionToDelete.childNodes[3].innerText);
+  const indexOfTransaction = moneyArr.indexOf(transactionAmount);
+  moneyArr.splice(indexOfTransaction,1);
+  transactionToDelete.classList.contains('income') ? incomeArea.removeChild(transactionToDelete) : expensesArea.removeChild(transactionToDelete);
+  countMoney(moneyArr) 
 }
 
 addTransactionBtn.addEventListener('click',showAddTransactionPanel);
