@@ -12,6 +12,8 @@ const deleteBtn = document.querySelector('.delete');
 const deleteAllBtn = document.querySelector('.delete-all');
 const saveBtn = document.querySelector('.save');
 const cancelBtn = document.querySelector('.cancel');
+const lightStyleBtn = document.querySelector('.light');
+const darkStyleBtn = document.querySelector('.dark');
 
 let root = document.documentElement;
 let ID = 0;
@@ -109,7 +111,21 @@ const deleteAllTransactions = () => {
   moneyArr = [0];
 }
 
+const changeStyleToLight = () => {
+  root.style.setProperty('--first-color', '#f9f9f9');
+  root.style.setProperty('--second-color', 'rgba(0, 0, 0, 0.877)');
+  root.style.setProperty('--border-color', 'rgb(0, 0, 0, .2)');
+}
+
+const changeStyleToDark = () => {
+  root.style.setProperty('--first-color', 'rgba(0, 0, 0, 0.877)');
+  root.style.setProperty('--second-color', '#f9f9f9');
+  root.style.setProperty('--border-color', 'rgb(255,255,255, .4)');
+}
+
 addTransactionBtn.addEventListener('click',showAddTransactionPanel);
 cancelBtn.addEventListener('click',closeAddTransactionPanel);
 saveBtn.addEventListener('click',checkForm);
 deleteAllBtn.addEventListener('click', deleteAllTransactions);
+lightStyleBtn.addEventListener('click', changeStyleToLight);
+darkStyleBtn.addEventListener('click', changeStyleToDark);
