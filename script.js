@@ -52,7 +52,7 @@ const createNewTransaction = () => {
   checkCategory(selectedCategory);
 
   newTransaction.innerHTML = `
-    <p class="transaction-name shopping-title">${categoryIcon} ${nameInput.value}</p>
+    <p class="transaction-name">${categoryIcon} ${nameInput.value}</p>
     <p class="transaction-amount"> ${amountInput.value}zł <button class="delete" onclick="deleteTransaction(${ID})")><i class="fa-solid fa-x"></i></button></p>
   `
   amountInput.value > 0 ? incomeArea.appendChild(newTransaction) && newTransaction.classList.add('income') : expensesArea.appendChild(newTransaction) && newTransaction.classList.add('expense');
@@ -72,20 +72,26 @@ const selectCategory = () => {
 const checkCategory = transaction => {
   switch (transaction) {
     case '[ + ] Salary':
-      categoryIcon = '<i class="fa-solid fa-money-bill-1"></i>';
+      categoryIcon = '<i class="fa-solid fa-money-bill-1 salary"></i>';
       break;
     case '[ + ] Benefit':
-      categoryIcon = '<i class="fa-solid fa-square-plus"></i>';
+      categoryIcon = '<i class="fa-solid fa-square-plus benefit"></i>';
       break;
     case '[ - ] Shopping':
-      categoryIcon = '<i class="fa-solid fa-bag-shopping"></i>';
+      categoryIcon = '<i class="fa-solid fa-bag-shopping shopping"></i>';
       break;
     case '[ - ] Car':
-      categoryIcon = '<i class="fa-solid fa-car"></i>';
+      categoryIcon = '<i class="fa-solid fa-car car"></i>';
       break;
-    case '[ - ] Health&Beauty':
-      categoryIcon = '<i class="fa-solid fa-heart-pulse"></i>';
-      break;   
+    case '[ - ] Health & Beauty':
+      categoryIcon = '<i class="fa-solid fa-heart-pulse healthandbeauty"></i>';
+      break;
+    case '[ - ] Bills':
+      categoryIcon = '<i class="fa-solid fa-file-invoice bills"></i>';
+      break;
+    case '[ - ] Entertainment & Travel':
+      categoryIcon = '<i class="fa-solid fa-film entertainmentandtravel"></i>';
+      break;
   }
 }
 

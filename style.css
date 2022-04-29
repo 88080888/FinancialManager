@@ -106,24 +106,32 @@ h2.title {
   margin-right: 10px;
 }
 
-.shopping-title i {
+.shopping {
   color: orangered;
 }
 
-.car-title i {
+.car {
   color: rgb(255, 196, 0);
 }
 
-.healthandbeauty-title i {
+.healthandbeauty {
   color: purple
 }
 
-.salary-title i {
+.salary {
   color: rgb(23, 9, 148);
 }
 
-.benefit-title i {
+.benefit {
   color: rgb(8, 100, 8);
+}
+
+.bills {
+  color: rgb(26, 161, 179)
+}
+
+.entertainmentandtravel {
+  color: rgb(214, 117, 214);
 }
 
 .delete {
@@ -284,4 +292,8 @@ h2.title {
 .add-transaction-panel button:hover {
   background-color: rgb(25, 27, 51);
   transform: scale(1.2);
+}
+
+.hidden {
+  display: none;
 }
